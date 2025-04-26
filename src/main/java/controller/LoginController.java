@@ -38,7 +38,7 @@ public class LoginController extends HttpServlet{
 		if (user != null && PasswordEncryptor.checkPassword(userPW, user.getPassword())) {
 
 			req.getSession().setAttribute("usuario_logado", user);
-			resp.sendRedirect("/facebook/");
+			resp.sendRedirect("/facebook/index.jsp");
 		} else resp.sendRedirect("/facebook/login.jsp?erro=true");
 	}
 

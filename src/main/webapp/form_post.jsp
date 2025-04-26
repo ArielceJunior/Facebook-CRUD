@@ -31,11 +31,27 @@
 
 			
 				<div class="mb-3">
-					<label for="post_user" class="form-label">Usuário</label> 
-					<input
-						type="text" id="post_user" name="post_user"
-						class="form-control" value="${post.getUser().getId()}" required>
-				</div>
+					<label for="user_id" class="form-label">Usuário</label>
+
+					<div class="mb-3">
+						<c:choose>
+							<c:when test="${not empty post.user}">
+								<input type="text" class="form-control"
+									value="ID: ${post.user.id} - ${post.user.name}" readonly>
+								<input type="hidden" name="user_id" value="${post.user.id}">
+							</c:when>
+
+							<c:otherwise>
+
+								<select name="user_id">
+									<c:forEach var="usuario" items="${usuarios}">
+										<option value="${usuario.id}">${usuario.name}</option>
+									</c:forEach>
+								</select>
+
+							</c:otherwise>
+						</c:choose>
+					</div>
 				
 
 

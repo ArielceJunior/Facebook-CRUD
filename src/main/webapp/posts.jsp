@@ -24,7 +24,7 @@
 			 
 				  <h1 class="m-0">Posts</h1>
 				
-				  <a href="form_post.jsp" class="btn btn-primary">
+				  <a href="form_post" class="btn btn-primary">
 				    Novo Post
 				  </a>
 			
